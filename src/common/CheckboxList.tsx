@@ -7,7 +7,7 @@ import TextField from '@mui/material/TextField';
 import { useState } from 'react';
 
 const CheckboxList = () => {
-  const [checked, setChecked] = useState([0]);
+  const [checked, setChecked] = useState([-1]);
   const initialTasks = ['', '', '', ''];
   const [tasks, setTasks] = useState(initialTasks);
 

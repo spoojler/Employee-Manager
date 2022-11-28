@@ -1,13 +1,18 @@
 import { Box } from '@mui/material';
-import React from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Calendar from './pages/Calendar';
 import Dashboard from './pages/Dashboard';
 
 function App() {
-  return (
-    <Box>
-      <Dashboard />
-    </Box>
-  );
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Dashboard />,
+    },
+    { path: 'calendar', element: <Calendar /> },
+  ]);
+
+  return <RouterProvider router={router} />;
 }
 
 export default App;

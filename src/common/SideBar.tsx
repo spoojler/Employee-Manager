@@ -6,6 +6,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const menuItemStyle = {
   justifyContent: 'center',
@@ -48,7 +49,9 @@ const SideBar = () => {
         }}
       >
         <MenuItem sx={menuItemStyle}>Tasks</MenuItem>
-        <MenuItem sx={menuItemStyle}>Calendar</MenuItem>
+        <MenuItem sx={menuItemStyle}>
+          <Link to={'calendar'}>Calendar</Link>
+        </MenuItem>
         <MenuItem sx={menuItemStyle}>Financial</MenuItem>
         <MenuItem sx={menuItemStyle}>Employees</MenuItem>
       </MenuList>

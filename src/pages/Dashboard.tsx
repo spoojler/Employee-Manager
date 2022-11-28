@@ -4,15 +4,20 @@ import Clock from '../common/Clock';
 import Header from '../common/Header';
 import SideBar from '../common/SideBar';
 
+const currentDayOfMonth = new Date().getDate();
+const currentDayOfWeek = new Date().getDay();
 const Dashboard = () => {
   return (
     <Box display={'flex'} bgcolor={'primary.50'}>
       <div>
         <SideBar />
       </div>
-      <Box sx={{width: '100%'}}>
+      <Box sx={{ width: '100%' }}>
         <Header />
-        <CalendarCell/>
+        <CalendarCell
+          dayOfWeek={currentDayOfWeek}
+          dayOfMonth={currentDayOfMonth}
+        />
       </Box>
     </Box>
   );
