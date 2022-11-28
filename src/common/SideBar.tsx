@@ -49,8 +49,8 @@ const SideBar = () => {
         }}
       >
         <MenuItem sx={menuItemStyle}>Tasks</MenuItem>
-        <MenuItem sx={menuItemStyle}>
-          <Link to={'calendar'}>Calendar</Link>
+        <MenuItem sx={menuItemStyle} component="a" href="calendar">
+          Calendar
         </MenuItem>
         <MenuItem sx={menuItemStyle}>Financial</MenuItem>
         <MenuItem sx={menuItemStyle}>Employees</MenuItem>
