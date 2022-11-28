@@ -6,17 +6,21 @@ import {
   Stack,
   Typography,
 } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const menuItemStyle = {
   justifyContent: 'center',
   width: '100%',
   fontSize: '20px',
   p: 2,
-  borderTop: 1,
+  borderTop: 2,
+  color: 'white',
+  textDecoration: 'none',
 };
+const linkStyle = { color: 'white', textDecoration: 'none' };
 
 const SideBar = () => {
+  const navigate = useNavigate();
   return (
     <Box
       sx={{
@@ -49,7 +53,7 @@ const SideBar = () => {
         }}
       >
         <MenuItem sx={menuItemStyle}>Tasks</MenuItem>
-        <MenuItem sx={menuItemStyle} component="a" href="calendar">
+        <MenuItem onClick={() => navigate('calendar')} sx={menuItemStyle}>
           Calendar
         </MenuItem>
         <MenuItem sx={menuItemStyle}>Financial</MenuItem>

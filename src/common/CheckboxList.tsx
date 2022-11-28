@@ -6,7 +6,11 @@ import Checkbox from '@mui/material/Checkbox';
 import TextField from '@mui/material/TextField';
 import { useState } from 'react';
 
-const CheckboxList = () => {
+interface CheckboxListProp {
+  fieldsCount: number;
+}
+
+const CheckboxList = (prop: CheckboxListProp) => {
   const [checked, setChecked] = useState([-1]);
   const initialTasks = ['', '', '', ''];
   const [tasks, setTasks] = useState(initialTasks);
@@ -32,13 +36,21 @@ const CheckboxList = () => {
     setChecked(newChecked);
   };
 
+  const setTaskFields = (fieldsCount: number) => {
+    const fieldsCountArray = [];
+    for (let i = 0; i < fieldsCount; i++) {
+      fieldsCountArray.push(i);
+    }
+    return fieldsCountArray;
+  };
+
   return (
-    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-      {[0, 1, 2, 3].map((value, index) => {
+    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', pb:0 }}>
+      {setTaskFields(prop.fieldsCount).map((value, index) => {
         const labelId = `checkbox-list-label-${tasks[index]}`;
 
         return (
-          <ListItem key={value} disablePadding>
+          <ListItem key={value}>
             <ListItemButton
               role={undefined}
               onClick={handleToggle(value)}

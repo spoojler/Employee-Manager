@@ -11,12 +11,13 @@ const calendarBoardStyle = {
 };
 
 const CalendarMonth = (props: CalendarMonthProps) => {
+  
   const getMonthDays = (month: number) => {
     const currentYear = new Date().getFullYear();
     return new Date(currentYear, month, 0).getDate();
   };
 
-  let daysInMonthArray: number[] = [];
+  const daysInMonthArray: number[] = [];
 
   for (let i = 1; i <= 12; i++) {
     const days: number = getMonthDays(i);
@@ -26,7 +27,7 @@ const CalendarMonth = (props: CalendarMonthProps) => {
   const monthCalendarBoard = (month: number) => {
     const daysCount = daysInMonthArray[month - 1];
     const calendarCellsArray = [];
-    for (let i = 1; i < daysCount; i++) {
+    for (let i = 1; i <= daysCount; i++) {
       const newCalendarCell = <CalendarCell dayOfMonth={i} dayOfWeek={3} />;
       calendarCellsArray.push(newCalendarCell);
     }

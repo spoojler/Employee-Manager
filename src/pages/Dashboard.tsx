@@ -14,10 +14,12 @@ const Dashboard = () => {
       </div>
       <Box sx={{ width: '100%' }}>
         <Header />
-        <CalendarCell
-          dayOfWeek={currentDayOfWeek}
-          dayOfMonth={currentDayOfMonth}
-        />
+        <Box sx={{ width: '350px', ml: 1 }}>
+          <CalendarCell
+            dayOfWeek={currentDayOfWeek}
+            dayOfMonth={currentDayOfMonth}
+          />
+        </Box>
       </Box>
     </Box>
   );
