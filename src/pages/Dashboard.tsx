@@ -1,6 +1,5 @@
-import { Box, Container } from '@mui/material';
+import { Box } from '@mui/material';
 import CalendarCell from '../common/CalendarCell';
-import Clock from '../common/Clock';
 import Header from '../common/Header';
 import SideBar from '../common/SideBar';
 

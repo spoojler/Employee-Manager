@@ -3,7 +3,6 @@ import {
   Box,
   MenuItem,
   MenuList,
-  Stack,
   Typography,
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
@@ -17,7 +16,6 @@ const menuItemStyle = {
   color: 'white',
   textDecoration: 'none',
 };
-const linkStyle = { color: 'white', textDecoration: 'none' };
 
 const SideBar = () => {
   const navigate = useNavigate();
