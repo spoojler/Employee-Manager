@@ -39,6 +39,9 @@ const CalendarCell = (props: CalendarCellProps) => {
     case 6:
       dayToDisplay = 'Saturday';
       break;
+    case 7:
+      dayToDisplay = 'Sunday';
+      break;
     default:
       dayToDisplay = 'Some day';
       break;

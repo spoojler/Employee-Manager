@@ -8,27 +8,35 @@ interface CalendarMonthProps {
 const calendarBoardStyle = {
   display: 'flex',
   flexWrap: 'wrap',
+  marginTop: '14px',
 };
 
 const CalendarMonth = (props: CalendarMonthProps) => {
-  
-  const getMonthDays = (month: number) => {
-    const currentYear = new Date().getFullYear();
-    return new Date(currentYear, month, 0).getDate();
+  const currentYear = new Date().getFullYear();
+
+  const getMonthDays = (month: number, year: number) => {
+    return new Date(year, month, 0).getDate();
   };
 
-  const daysInMonthArray: number[] = [];
-
+  const daysInMonth: number[] = [];
   for (let i = 1; i <= 12; i++) {
-    const days: number = getMonthDays(i);
-    daysInMonthArray.push(days);
+    const days: number = getMonthDays(i, currentYear);
+    daysInMonth.push(days);
   }
 
   const monthCalendarBoard = (month: number) => {
-    const daysCount = daysInMonthArray[month - 1];
+    const getDayOfWeek = (day: number) => {
+      const dateObject = new Date(currentYear, month, day);
+      return dateObject.getDay();
+    };
+
+    const daysCount = daysInMonth[month - 1];
+
     const calendarCellsArray = [];
     for (let i = 1; i <= daysCount; i++) {
-      const newCalendarCell = <CalendarCell dayOfMonth={i} dayOfWeek={3} />;
+      const newCalendarCell = (
+        <CalendarCell dayOfMonth={i} dayOfWeek={getDayOfWeek(i)} />
+      );
       calendarCellsArray.push(newCalendarCell);
     }
     return calendarCellsArray;
