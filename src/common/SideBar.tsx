@@ -1,10 +1,4 @@
-import {
-  Avatar,
-  Box,
-  MenuItem,
-  MenuList,
-  Typography,
-} from '@mui/material';
+import { Avatar, Box, MenuItem, MenuList, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 const menuItemStyle = {
@@ -50,12 +44,26 @@ const SideBar = () => {
           justifyContent: 'stretch',
         }}
       >
+        <MenuItem
+          onClick={() => navigate('/', { replace: true })}
+          sx={menuItemStyle}
+        >
+          Dashboard
+        </MenuItem>
         <MenuItem sx={menuItemStyle}>Tasks</MenuItem>
-        <MenuItem onClick={() => navigate('calendar')} sx={menuItemStyle}>
+        <MenuItem
+          onClick={() => navigate('/calendar', { replace: true })}
+          sx={menuItemStyle}
+        >
           Calendar
         </MenuItem>
         <MenuItem sx={menuItemStyle}>Financial</MenuItem>
-        <MenuItem sx={menuItemStyle}>Employees</MenuItem>
+        <MenuItem
+          onClick={() => navigate('/employees', { replace: true })}
+          sx={menuItemStyle}
+        >
+          Employees
+        </MenuItem>
       </MenuList>
     </Box>
   );
